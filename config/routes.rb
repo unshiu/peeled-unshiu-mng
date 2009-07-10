@@ -38,6 +38,8 @@ ActionController::Routing::Routes.draw do |map|
     manage.resources :mixi_active_histories, :collection => { :year => :get, :month => :get }
     manage.resources :mixi_users
 
+    manage.resources :mixi_inflow_masters, :new => { :create_confirm => :post }, :member => [ :update_confirm, :destroy_confirm]
+    manage.resources :mixi_inflow_summaries
   end
    
 end
