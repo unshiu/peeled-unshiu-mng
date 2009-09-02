@@ -39,7 +39,9 @@ ActionController::Routing::Routes.draw do |map|
     manage.resources :mixi_users
 
     manage.resources :mixi_inflow_masters, :new => { :create_confirm => :post }, :member => [ :update_confirm, :destroy_confirm]
-    manage.resources :mixi_inflow_summaries
+    manage.resources :mixi_inflow_summaries, :collection => { :search => :any }
+    
+    manage.resources :mixi_app_invite_summaries, :collection => { :search => :any }
   end
    
 end
